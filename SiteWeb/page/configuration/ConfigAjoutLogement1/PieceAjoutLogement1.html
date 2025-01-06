@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ajouter une Pièce</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Eco Gestion</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="../../../acceuil/acceuil.html">Accueil</a></li>
+          <li class="nav-item"><a class="nav-link" href="../ConfigLogement1.html">Retour</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Formulaire d'ajout de pièce -->
+  <div class="container mt-4">
+    <h2 class="text-center">Ajouter une Pièce</h2>
+    <form id="add-piece-form" class="mt-4">
+      <div class="mb-3">
+        <label for="id_piece" class="form-label">ID de la Pièce</label>
+        <input type="number" class="form-control" id="id_piece" placeholder="Exemple : 1" required>
+      </div>
+      <div class="mb-3">
+        <label for="Nom" class="form-label">Nom de la Pièce</label>
+        <input type="text" class="form-control" id="Nom" placeholder="Exemple : Salon" required>
+      </div>
+      <div class="mb-3">
+        <label for="coordonnees" class="form-label">Coordonnées</label>
+        <input type="text" class="form-control" id="coordonnees" placeholder="Exemple : 0010" required>
+      </div>
+      <div class="mb-3">
+        <label for="id_logement" class="form-label">Logement</label>
+        <select class="form-select" id="id_logement" required>
+          <option value="" disabled selected>Choisissez un logement existant</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary w-100">Ajouter la Pièce</button>
+    </form>
+    <div id="response-message" class="mt-3"></div>
+  </div>
+
+  <script>
+    // Charger les logements existants depuis l'API
+    async function fetchLogements() {
+      try {
+        const response = await fetch("http://127.0.0.1:8000/logements/");
+        const data = await response.json();
+        const logementSelect = document.getElementById("id_logement");
+
+        // Ajouter les logements existants dans le menu déroulant
+        data.logements.forEach(logement => {
+          const option = document.createElement("option");
+          option.value = logement.id_logement;
+          option.textContent = logement.adresse;
+          logementSelect.appendChild(option);
+        });
+      } catch (error) {
+        console.error("Erreur lors de la récupération des logements :", error);
+      }
+    }
+
+    // Soumettre le formulaire pour ajouter une pièce
+    document.getElementById("add-piece-form").addEventListener("submit", async function(e) {
+      e.preventDefault();
+
+      const piece = {
+        id_piece: document.getElementById("id_piece").value,
+        Nom: document.getElementById("Nom").value,
+        coordonnees: document.getElementById("coordonnees").value,
+        id_logement: document.getElementById("id_logement").value,
+      };
+
+      const response = await fetch("http://127.0.0.1:8000/add-piece/", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(piece),
+      });
+
+      const result = await response.json();
+      const messageDiv = document.getElementById("response-message");
+      if (response.ok) {
+        messageDiv.textContent = "Pièce ajoutée avec succès!";
+        messageDiv.className = "text-success text-center";
+      } else {
+        messageDiv.textContent = `Erreur : ${result.detail}`;
+        messageDiv.className = "text-danger text-center";
+      }
+    });
+
+    // Charger les logements au chargement de la page
+    window.onload = fetchLogements;
+  </script>
+</body>
+</html>

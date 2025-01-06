@@ -1,0 +1,84 @@
+/* General body styling */
+body {
+  background-color: #6a0dad; /* Purple background */
+  color: white;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #ffffff;
+}
+
+.navbar a.nav-link {
+  color: #6a0dad;
+}
+
+.navbar a.nav-link:hover {
+  color: #4b0082; /* Darker purple */
+}
+
+/* Cards */
+.card {
+  background-color: #ffffff;
+  color: #333;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+  width: 100%; /* Responsive width */
+  max-width: 300px; /* Maximum width for cards */
+  height: 400px; /* Uniform height */
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+/* Uniformiser la taille des images */
+.uniform-image {
+  width: 100%; /* Les images s'adaptent à la largeur du conteneur */
+  height: 200px; /* Hauteur fixe pour toutes les images */
+  object-fit: cover; /* Garde le contenu proportionné, coupe si nécessaire */
+  border-radius: 10px; /* Coins arrondis pour un design harmonieux */
+}
+
+/* Boutons */
+.card .btn-primary {
+  background-color: #6a0dad;
+  border-color: #6a0dad;
+}
+
+.card .btn-primary:hover {
+  background-color: #4b0082;
+  border-color: #4b0082;
+}
+
+/* Alignement central du texte */
+.card-body {
+  text-align: center;
+}
+
+/*consomation html*/
+.uniform-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.card {
+  margin: 20px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  transition: transform 0.2s ease;
+}
+.card:hover {
+  transform: scale(1.05);
+}

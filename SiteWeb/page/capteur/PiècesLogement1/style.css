@@ -1,0 +1,52 @@
+/* Style général pour la page */
+body {
+  background-color: #6a0dad; /* Violet */
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+/* Navigation Bar */
+.navbar {
+  background-color: #ffffff;
+}
+.navbar a.nav-link {
+  color: #6a0dad;
+}
+.navbar a.nav-link:hover {
+  color: #4b0082; /* Violet plus foncé */
+}
+
+/* Style pour les cartes des capteurs */
+.custom-card {
+  width: 300px;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+.custom-header {
+  background-color: #4b0082; /* Violet plus foncé */
+  color: white;
+  padding: 10px;
+  font-size: 18px;
+  text-align: center;
+}
+
+/* Style pour les tableaux */
+.custom-table {
+  width: 100%;
+  margin: 0;
+  border-collapse: collapse;
+}
+.custom-table th,
+.custom-table td {
+  text-align: center;
+  padding: 8px;
+}
+.custom-table th {
+  background-color: #6a0dad; /* Violet */
+  color: white;
+}
+.custom-table td {
+  background-color: #f3f3f3;
+}
