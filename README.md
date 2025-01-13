@@ -18,7 +18,7 @@ Ce projet vise à concevoir un système IoT complet pour la gestion d'un logemen
 ### Prérequis
 - Python 3.9 ou version ultérieure
 - SQLite3
-- Modules Python : `fastapi`, `uvicorn`, `sqlite3`, `jinja2` (installer avec pip si nécessaire)
+- Modules Python : `fastapi`, `uvicorn`, `sqlite3` (installer avec pip si nécessaire)
 
 ### Installation
 1. Clonez le dépôt :
