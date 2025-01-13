@@ -50,14 +50,15 @@ Pour tester les endpoints, rendez-vous sur la documentation interactive :
 ## Explications des Différentes Parties
 Chaque partie du projet est documentée dans un fichier dédié :
 
-- **Partie Consommation :** Voir `conso/README.txt`
-- **Partie Capteurs :** Voir `capteur/README.txt`
-- **Partie Économies :** Voir `economie/README.txt`
-- **Partie Configuration :** Voir `configuration/README.txt`
-- **Code Backend :** Voir `server/README.txt`
+- **Partie Accueil :** Voir `README_Accueil.txt` : [README_Accueil.txt](https://github.com/user-attachments/files/18391699/README_Accueil.txt)
+- **Partie Consommation :** Voir `README_Conso.txt` : [README_Conso.txt](https://github.com/user-attachments/files/18391702/README_Conso.txt)
+- **Partie Capteurs :** Voir `README_Capteur.txt` : [README_Capteur.txt](https://github.com/user-attachments/files/18391700/README_Capteur.txt)
+- **Partie Économies :** Voir `README_Eco.txt` : [README_Eco.txt](https://github.com/user-attachments/files/18391703/README_Eco.txt)
+- **Partie Configuration :** Voir `README_Conf.txt` : [README_Conf.txt](https://github.com/user-attachments/files/18391701/README_Conf.txt)
+- **Code Backend :** Voir `README_Server.txt` : [README_server.txt](https://github.com/user-attachments/files/18391698/README_server.txt)
 
 ## Sources Utilisées
-- ChatGPT (OpenAI) pour la génération du code HTML et l'optimisation de code.
+- ChatGPT (OpenAI) pour la génération du code HTML, la correction de code et l'optimisation de code.
 - Documentation officielle de FastAPI : [https://fastapi.tiangolo.com/](https://fastapi.tiangolo.com/)
 - Documentation officielle de Bootstrap : [https://getbootstrap.com/](https://getbootstrap.com/)
 
