@@ -58,7 +58,7 @@ Chaque partie du projet est documentée dans un fichier dédié :
 - **Code Backend :** Voir `README_Server.txt` : [README_server.txt](https://github.com/user-attachments/files/18391698/README_server.txt)
 
 ## Sources Utilisées
-- ChatGPT (OpenAI) pour la génération du code HTML, la correction de code et l'optimisation de code.
+- ChatGPT (OpenAI) pour la génération du code hors base de donnée, la correction de code et l'optimisation de code.
 - Documentation officielle de FastAPI : [https://fastapi.tiangolo.com/](https://fastapi.tiangolo.com/)
 - Documentation officielle de Bootstrap : [https://getbootstrap.com/](https://getbootstrap.com/)
 
